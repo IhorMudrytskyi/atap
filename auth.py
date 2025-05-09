@@ -40,7 +40,7 @@ with tab[1]:
     reg_last_name = st.text_input("Прізвище ").replace(" ", "")
     reg_email = st.text_input("Електронна пошта ").replace(" ", "")
     reg_login = st.text_input("Логін ").replace(" ", "")
-    reg_password = st.text_input("Пароль ").replace(" ", "")
+    reg_password = st.text_input("Пароль ", type = "password").replace(" ", "")
     if st.button("Створити акаунт"):
         cursor.execute("select login from auth where login = %s;",(reg_login,))
         login_result = cursor.fetchone()
